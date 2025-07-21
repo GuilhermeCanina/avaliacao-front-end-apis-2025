@@ -1,12 +1,161 @@
-*{
+* {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-    --p1: #000000;
-    --p2: #333333;
-    --p3: #cccccc;
-    --p4: #ffffff;
+    --p1: #000000; /* Preto */
+    --p2: #333333; /* Cinza escuro */
+    --p3: #cccccc; /* Cinza claro */
+    --p4: #ffffff; /* Branco */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--p3); /* Fundo cinza claro */
+    color: var(--p2); /* Texto cinza escuro */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background-color: var(--p4); /* Fundo branco da área principal */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para a área */
+}
+
+.login-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid var(--p2); /* Borda cinza escuro */
+    border-radius: 8px;
+    background-color: var(--p4); /* Fundo branco */
+    color: var(--p2); /* Texto cinza escuro */
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    border-color: var(--p1); /* Borda preta ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave ao focar */
+}
+
+button {
+    padding: 12px 24px;
+    background-color: var(--p1); /* Preto */
+    border: none;
+    color: var(--p4); /* Texto branco */
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--p2); /* Cinza escuro no hover */
+    transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(0); /* Botão volta para a posição original */
+}
+
+.error-message {
+    color: #e74c3c; /* Vermelho para mensagens de erro */
+    margin-top: 12px;
+    font-size: 0.9rem;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.post-card {
+    background-color: var(--p4); /* Fundo branco */
+    border: 1px solid var(--p2); /* Borda cinza escuro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px); /* Leve elevação ao passar o mouse */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais forte */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-top: 18px;
+    border: 1px solid var(--p2); /* Borda cinza escuro */
+    border-radius: 8px;
+    background-color: var(--p4); /* Fundo branco */
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--p1); /* Borda preta ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave ao focar */
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: var(--p4); /* Fundo branco */
+    padding: 40px;
+    max-width: 600px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+}
+
+.modal .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: var(--p2); /* Texto cinza escuro */
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
